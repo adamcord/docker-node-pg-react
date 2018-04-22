@@ -1,10 +1,11 @@
-FROM node:8.11.1
+FROM node:8.11.1-alpine
 
 WORKDIR /app
+COPY package.json .
 
 RUN yarn global add nodemon
-COPY . .
 RUN yarn install --silent
 
-EXPOSE 8000
-CMD yarn start
+COPY . .
+
+ CMD yarn start

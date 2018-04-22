@@ -15,9 +15,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - /api/app
-    environment:
-      - VIRTUAL_HOST=adamcordeiro.dev
+      - ./api:/api
+      - /app/node_modules
     links:
       - db
   web:
@@ -25,16 +24,9 @@ services:
       context: ./web
       dockerfile: Dockerfile-web
     volumes:
-      - /web/app
+      - ./web:/web
     command: yarn start
     ports:
       - "3000:3000"
 volumes:
   db-data:
-
-
-
-  # build: ./result
-  #   command: nodemon server.js
-  #   volumes:
-  #     - ./result:/app
