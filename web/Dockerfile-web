@@ -1,10 +1,10 @@
-FROM node:8.11.1-alpine
+FROM node:8.11.1
 
 WORKDIR /app
 COPY package.json .
 
 RUN yarn install --silent
 
- COPY . .
+COPY . .
 
- CMD yarn start
+CMD yarn start
