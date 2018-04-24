@@ -8,6 +8,4 @@ RUN yarn install --silent
 
 COPY . .
 
-# RUN knex migrate:latest
-
 CMD yarn start
