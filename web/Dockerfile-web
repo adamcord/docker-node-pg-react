@@ -1,10 +1,7 @@
 FROM node:8.11.1
 
-WORKDIR /app
-COPY package.json .
+WORKDIR /web
 
 RUN yarn install --silent
-
-COPY . .
 
 CMD yarn start
